@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Природа Прикамья</title>
     <link rel="stylesheet" href="style.css">
-   
 </head>
 <body>
     <!-- Фиксированная шапка -->
@@ -14,6 +13,7 @@
             <div class="logo">
                 <img src="img/лого.png" alt="Логотип компании">
             </div>
+            <button class="menu-toggle" aria-label="Меню">☰</button>
             <nav class="header-nav">
                 <a href="index.html" class="nav-button active">Главная</a>
                 <a href="hiking.html" class="nav-button">Пешие маршруты</a>
@@ -23,15 +23,17 @@
         </div>
     </header>
 
-    <!-- Основная часть с затемнённым фоном -->
+    <!-- Основная часть -->
     <main class="main-content">
         <section class="hero-section">
+            <div class="hero-overlay"></div>
             <div class="hero-text">
                 <h1>Природа Пермского края</h1>
-                <p>Прикамье — это край удивительной природы, где густые таёжные леса соседствуют с живописными реками и чистыми озёрами. Здесь можно встретить могучие Уральские горы, глубокие карстовые пещеры и заповедные уголки, богатые редкими растениями и животными. Любителей активного отдыха ждут сплавы по Каме и Чусовой, походы по национальным паркам, а ценителей тишины — уютные базы отдыха на берегах лесных озёр. Прикамье подарит вам незабываемые впечатления в любое время года!</p>
+                <p>Прикамье — это край удивительной природы, где густые таёжные леса соседствуют с живописными реками и чистыми озёрами.</p>
                 <a href="hiking.html" class="cta-button">Начать путешествие</a>
             </div>
         </section>
+        
         
         <!-- Блок преимуществ -->
         <section class="advantages-section">
@@ -132,6 +134,17 @@
     </footer>
 
     <script>
+        // Мобильное меню
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.header-nav').classList.toggle('active');
+        });
+
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('.header-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.header-nav').classList.remove('active');
+            });
+        });
         // Обработчик формы обратной связи
         document.getElementById('feedback-form').addEventListener('submit', function(e) {
             e.preventDefault();
