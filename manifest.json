@@ -1,0 +1,21 @@
+{
+  "name": "Туризм в Пермском крае",
+  "short_name": "ПермьТур",
+  "description": "Приложение для туристических маршрутов Пермского края",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#2c3e50",
+  "theme_color": "#4ba654",
+  "icons": [
+    {
+      "src": "img/лого.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/лого.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
