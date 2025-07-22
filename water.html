@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Водные маршруты Пермского края</title>
     <link rel="stylesheet" href="style.css">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="theme-color" content="#2ecc71">
 </head>
 <body>
     <!-- Фиксированная шапка -->
@@ -252,11 +254,23 @@
         </div>
     </footer>
 
-    <script>
-        // Мобильное меню
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.header-nav').classList.toggle('active');
-        });
-    </script>
+	<script>
+    // Регистрация Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sv.js')
+          .then(function(registration) {
+            console.log('ServiceWorker зарегистрирован:', registration.scope);
+          })
+          .catch(function(err) {
+            console.log('Ошибка регистрации ServiceWorker:', err);
+          });
+      });
+    }
+
+    document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+      document.querySelector('.header-nav').classList.toggle('active');
+    });
+	</script>
 </body>
 </html>
