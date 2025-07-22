@@ -95,7 +95,6 @@ body {
     background: url('img/картинка основная.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
-	background: rgba(0,0,0,1);
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -105,7 +104,7 @@ body {
 .hero-text {
     position: relative;
     z-index: 1;
-    color: white;
+    color: darkgrey;
     max-width: 800px;
     padding: 20px;
 }
