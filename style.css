@@ -95,6 +95,7 @@ body {
     background: url('img/картинка основная.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
+	background: rgba(0,0,0,1);
     align-items: center;
     justify-content: center;
     text-align: center;
