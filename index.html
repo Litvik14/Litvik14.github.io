@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Природа Прикамья</title>
     <link rel="stylesheet" href="style.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <!-- Фиксированная шапка -->
@@ -14,7 +13,7 @@
             <div class="logo">
                 <img src="img/лого.png" alt="Логотип компании">
             </div>
-            <button class="menu-toggle" aria-label="Меню">☰</button>
+            <button class="menu-toggle">☰</button>
             <nav class="header-nav">
                 <a href="index.html" class="nav-button active">Главная</a>
                 <a href="hiking.html" class="nav-button">Пешие маршруты</a>
@@ -24,17 +23,15 @@
         </div>
     </header>
 
-    <!-- Основная часть -->
+    <!-- Основная часть с затемнённым фоном -->
     <main class="main-content">
         <section class="hero-section">
-            <div class="hero-overlay"></div>
             <div class="hero-text">
                 <h1>Природа Пермского края</h1>
-                <p>Прикамье — это край удивительной природы, где густые таёжные леса соседствуют с живописными реками и чистыми озёрами.</p>
+                <p>Прикамье — это край удивительной природы, где густые таёжные леса соседствуют с живописными реками и чистыми озёрами. Здесь можно встретить могучие Уральские горы, глубокие карстовые пещеры и заповедные уголки, богатые редкими растениями и животными. Любителей активного отдыха ждут сплавы по Каме и Чусовой, походы по национальным паркам, а ценителей тишины — уютные базы отдыха на берегах лесных озёр. Прикамье подарит вам незабываемые впечатления в любое время года!</p>
                 <a href="hiking.html" class="cta-button">Начать путешествие</a>
             </div>
         </section>
-        
         
         <!-- Блок преимуществ -->
         <section class="advantages-section">
@@ -101,36 +98,17 @@
         </section>
     </main>
 
-    <!-- Подвал с формой обратной связи -->
+    <!-- Подвал -->
     <footer class="site-footer">
         <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Природа Прикамья</h3>
-                    <p>Откройте для себя удивительную природу Урала</p>
-                    <div class="footer-contacts">
-                        <p>Контактный телефон:+7 (342) 000-00-00</p>
-                        <p>email: nature@permkrai.ru</p>
-                    </div>
-                </div>
-                
-                <div class="footer-contact-form">
-                    <h3>Хотите оставить отзыв? Напишите нам!</h3>
-                    <form method="POST" action="feedback.php" class="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Ваш email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Ваше сообщение" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Отправить сообщение</button>
-                    </form>
+            <div class="footer-info">
+                <h3>Природа Прикамья</h3>
+                <p>Откройте для себя удивительную природу Урала</p>
+                <div class="footer-contacts">
+                    <p>Контактный телефон: +7 (342) 000-00-00</p>
+                    <p>email: nature@permkrai.ru</p>
                 </div>
             </div>
-            
         </div>
     </footer>
 
@@ -139,56 +117,6 @@
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.header-nav').classList.toggle('active');
         });
-
-        // Закрытие меню при клике на ссылку
-        document.querySelectorAll('.header-nav a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.querySelector('.header-nav').classList.remove('active');
-            });
-        });
-        // Обработчик формы обратной связи
-        document.getElementById('feedback-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Получаем данные формы
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            
-            
-            // Очищаем форму
-            this.reset();
-        });
-
-        // Плавная прокрутка для якорных ссылок
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
     </script>
-	<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const headerNav = document.querySelector('.header-nav');
-        
-        menuToggle.addEventListener('click', function() {
-            headerNav.classList.toggle('active');
-            document.body.classList.toggle('no-scroll');
-        });
-        
-        // Закрытие меню при клике на ссылку
-        document.querySelectorAll('.header-nav a').forEach(link => {
-            link.addEventListener('click', function() {
-                headerNav.classList.remove('active');
-                document.body.classList.remove('no-scroll');
-            });
-        });
-    });
-</script>
 </body>
 </html>

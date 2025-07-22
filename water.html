@@ -13,6 +13,7 @@
             <div class="logo">
                 <img src="img/лого.png" alt="Логотип Пермского края">
             </div>
+            <button class="menu-toggle">☰</button>
             <nav class="header-nav">
                 <a href="index.html" class="nav-button">Главная</a>
                 <a href="hiking.html" class="nav-button">Пешие маршруты</a>
@@ -35,7 +36,7 @@
             <article class="route-card">
                 <div class="route-image-container">
                     <img src="img/чусовая 1.jpg" class="route-main-image">
-					<div class="route-meta">
+                    <div class="route-meta">
                         <span>📍 Маршрут: Староуткинск - Чусовой</span>
                         <span>📏 Протяжённость: 150 км</span>
                         <span>⚡ Сложность: средняя</span>
@@ -237,5 +238,25 @@
         </div>
     </main>
 
+    <!-- Подвал -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Природа Прикамья</h3>
+                <p>Откройте для себя удивительную природу Урала</p>
+                <div class="footer-contacts">
+                    <p>Контактный телефон: +7 (342) 000-00-00</p>
+                    <p>email: nature@permkrai.ru</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Мобильное меню
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.header-nav').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
