@@ -104,7 +104,7 @@ body {
 .hero-text {
     position: relative;
     z-index: 1;
-    color: black;
+    color: white;
     max-width: 800px;
     padding: 20px;
 }
