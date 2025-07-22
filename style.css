@@ -101,10 +101,20 @@ body {
     padding: 20px;
 }
 
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Уровень затемнения (0.4 - средний) */
+    z-index: 0;
+
 .hero-text {
     position: relative;
     z-index: 1;
-    color: black;
+    color: white;
     max-width: 800px;
     padding: 20px;
 }
